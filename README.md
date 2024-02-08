@@ -72,6 +72,28 @@ Then run the script like so:
 ./build/bin/call_finder test/nested.c
 ```
 
+The first five lines of output should be:
+
+```txt
+macro   A       test/nested.c:17:3
+macro   B       test/nested.c:3:11
+macro   C       test/nested.c:2:11
+macro   B       test/nested.c:18:3
+macro   C       test/nested.c:2:11
+macro   C       test/nested.c:19:3
+```
+
+The general form of each line of output is:
+
+```txt
+<identifier><tab><callee name><tab><location>
+```
+
+Where `<identifer>` is either `macro` or `function`, `<tab>` is a tab character,
+`<callee name>` is the name of the called macro or function, and `<location>` is
+the speling location of the callsite, as reported by Clang. Function and
+function-like macro names are followed by a pair of parentheses, i.e., `()`.
+
 ### Quick tips
 
 If you are on Linux, you can pipe the output of the call_finder to `sort -u` to
