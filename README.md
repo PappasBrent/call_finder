@@ -11,7 +11,7 @@ The following instructions assume an Ubuntu 22.04 LTS operating system:
 - Make
 
   ```console
-      sudo apt install make
+  sudo apt install make
   ```
 
 - CMake 3.28.1 (click [here](https://apt.kitware.com/) for download and install
