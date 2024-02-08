@@ -1,4 +1,4 @@
-# C macro and function call finders
+# C macro and function call finder
 
 A Clang plugin for finding all macro and function calls in a C file.
 
