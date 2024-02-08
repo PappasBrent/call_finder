@@ -1,0 +1,37 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 28,
+        "patch": 1
+    },
+    "configurePresets": [
+        {
+            "name": "configure-make-debug",
+            "displayName": "Make debug",
+            "binaryDir": "${sourceDir}/build/",
+            "environment": {
+                "C_COMPILER": "clang-17",
+                "CXX_COMPILER": "clang++-17",
+                "LLVM_DIR": "/usr/include/llvm-17",
+                "Clang_DIR": "/usr/lib/cmake/clang-17"
+            },
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_C_COMPILER": "$env{C_COMPILER}",
+                "CMAKE_CXX_COMPILER": "$env{CXX_COMPILER}",
+                "LLVM_DIR": "$env{LLVM_DIR}",
+                "Clang_DIR": "$env{Clang_DIR}",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": true
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "build-make-debug",
+            "displayName": "Build Make debug",
+            "configurePreset": "configure-make-debug",
+            "jobs": 2
+        }
+    ]
+}

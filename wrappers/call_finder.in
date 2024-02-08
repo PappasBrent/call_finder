@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+clang-17 \
+    -fplugin=@PROJECT_BINARY_DIR@/lib/libcall_finder.so \
+    -fsyntax-only \
+    "$@"
