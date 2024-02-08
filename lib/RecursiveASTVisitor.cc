@@ -24,7 +24,7 @@ bool RecursiveASTVisitor::VisitCallExpr(clang::CallExpr *CE) {
   auto SourceLoc = CE->getBeginLoc();
   auto SpellingLoc = SM.getSpellingLoc(SourceLoc);
 
-  llvm::outs() << "function\t" << Name << "\t";
+  llvm::outs() << "function\t" << Name << "()\t";
   SpellingLoc.print(llvm::outs(), SM);
   llvm::outs() << '\n';
 
